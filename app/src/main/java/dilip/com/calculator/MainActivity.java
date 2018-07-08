@@ -38,13 +38,22 @@ public class MainActivity extends AppCompatActivity {
         Button button7 = findViewById(R.id.btn7);
         Button button8 = findViewById(R.id.btn8);
         Button button9 = findViewById(R.id.btn9);
-        Button buttondot = findViewById(R.id.btndot);
+        final Button buttondot = findViewById(R.id.btndot);
         Button buttonequals = findViewById(R.id.btnequals);
         Button buttonaddition = findViewById(R.id.btnaddition);
         Button buttonmultiply = findViewById(R.id.btnmultiply);
         Button buttonsubstraction = findViewById(R.id.btnsubstraction);
         Button buttondivision = findViewById(R.id.btndivision);
+        Button buttonneg = findViewById(R.id.btnneg);
 
+        View.OnClickListener negListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                newNumber.setText("-".concat(newNumber.getText().toString()));
+            }
+        };
+
+        buttonneg.setOnClickListener(negListener);
         View.OnClickListener listener = new View.OnClickListener() {
 
             @Override
